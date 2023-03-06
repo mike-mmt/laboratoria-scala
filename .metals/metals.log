@@ -1,0 +1,1326 @@
+2023.03.01 12:23:08 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\lsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2023.03.01 12:23:10 INFO  logging to file \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.log
+2023.03.01 12:23:10 INFO  Started: Metals version 0.11.10 in workspace '\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal' for client Visual Studio Code 1.75.1.
+2023.03.01 12:23:10 WARN  Can't instantiate JavaInteractiveSemanticdb (version: JdkVersion(8), jdkHome: C:\Program Files\Java\jre1.8.0_341, javac exists: false)
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/micha/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.10.5/scribe-slf4j_2.13-3.10.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.03.01 12:23:11 WARN  resetting database: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.h2.db
+2023.03.01 12:23:11 ERROR org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database (jdbc:h2:file:\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals;AUTO_SERVER=TRUE) for user 'sa': Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : HYC00
+Error Code : 50100
+Message    : Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:556)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.engine.Database.<init>(Database.java:304)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnectionFromDriver(DriverDataSource.java:258)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnection(DriverDataSource.java:223)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 12:23:11 WARN  resetting database: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.h2.db
+2023.03.01 12:23:11 ERROR unable to setup persistent H2 database with AUTO_SERVER=false, falling back to in-memory database. This means you may be redundantly asked to execute 'Import build', even if it's not needed. Also, code navigation will not work for existing files in the .metals/readonly/ directory. To fix this problem, make sure you only have one running Metals server in the directory '\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal'.org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database (jdbc:h2:file:\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals;AUTO_SERVER=TRUE) for user 'sa': Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : HYC00
+Error Code : 50100
+Message    : Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:98)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:92)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:556)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.engine.Database.<init>(Database.java:304)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnectionFromDriver(DriverDataSource.java:258)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnection(DriverDataSource.java:223)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:98)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:92)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 12:23:12 INFO  time: initialize in 1.96s
+2023.03.01 12:23:13 INFO  Attempting to connect to the build server...
+2023.03.01 12:23:13 INFO  Running BSP server [/usr/lib/jvm/java-17-openjdk-amd64/bin/java, -Xms100m, -Xmx100m, -classpath, /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar, -Dsbt.script=/usr/bin/sbt, xsbt.boot.Boot, -bsp]
+2023.03.01 12:23:13 ERROR Running process '/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xms100m -Xmx100m -classpath /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar -Dsbt.script=/usr/bin/sbt xsbt.boot.Boot -bsp' failedjava.io.IOException: Cannot run program "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" (in directory "\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal"): CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.bsp.BspServers.newServer(BspServers.scala:109)
+	at scala.meta.internal.bsp.BspConnector.connect$1(BspConnector.scala:86)
+	at scala.meta.internal.bsp.BspConnector.connect(BspConnector.scala:127)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$autoConnectToBuildServer$4(MetalsLanguageServer.scala:2449)
+	at scala.meta.internal.metals.TimerProvider.withTimer(TimerProvider.scala:38)
+	at scala.meta.internal.metals.TimerProvider.timed(TimerProvider.scala:14)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$autoConnectToBuildServer$3(MetalsLanguageServer.scala:2449)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:470)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: java.io.IOException: CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(null)
+	at java.lang.ProcessImpl.start(null)
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.bsp.BspServers.newServer(BspServers.scala:109)
+	at scala.meta.internal.bsp.BspConnector.connect$1(BspConnector.scala:86)
+	at scala.meta.internal.bsp.BspConnector.connect(BspConnector.scala:127)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$autoConnectToBuildServer$4(MetalsLanguageServer.scala:2449)
+	at scala.meta.internal.metals.TimerProvider.withTimer(TimerProvider.scala:38)
+	at scala.meta.internal.metals.TimerProvider.timed(TimerProvider.scala:14)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$autoConnectToBuildServer$3(MetalsLanguageServer.scala:2449)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:470)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 12:23:12 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\bsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.03.01 12:23:23 INFO  no build target found for \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala. Using presentation compiler with project's scala-library version: 3.2.1
+2023.03.01 12:23:29 INFO  time: code lens generation in 10s
+2023.03.01 12:24:13 ERROR Timeout waiting for 'build/initialize' response
+2023.03.01 12:24:13 WARN  Retrying connection to the build server sbt
+2023.03.01 12:24:13 INFO  Running BSP server [/usr/lib/jvm/java-17-openjdk-amd64/bin/java, -Xms100m, -Xmx100m, -classpath, /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar, -Dsbt.script=/usr/bin/sbt, xsbt.boot.Boot, -bsp]
+2023.03.01 12:24:13 ERROR Running process '/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xms100m -Xmx100m -classpath /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar -Dsbt.script=/usr/bin/sbt xsbt.boot.Boot -bsp' failedjava.io.IOException: Cannot run program "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" (in directory "\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal"): CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: java.io.IOException: CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(null)
+	at java.lang.ProcessImpl.start(null)
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 12:24:13 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\bsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.03.01 13:07:48 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 01, 2023 1:07:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 21
+2023.03.01 13:07:52 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 01, 2023 1:07:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 29
+mar 01, 2023 1:07:52 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 31
+2023.03.01 13:07:53 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.01 13:08:02 ERROR Timeout waiting for 'build/initialize' response
+2023.03.01 13:08:02 WARN  Retrying connection to the build server sbt
+2023.03.01 13:08:02 INFO  Running BSP server [/usr/lib/jvm/java-17-openjdk-amd64/bin/java, -Xms100m, -Xmx100m, -classpath, /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar, -Dsbt.script=/usr/bin/sbt, xsbt.boot.Boot, -bsp]
+2023.03.01 13:08:02 ERROR Running process '/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xms100m -Xmx100m -classpath /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar -Dsbt.script=/usr/bin/sbt xsbt.boot.Boot -bsp' failedjava.io.IOException: Cannot run program "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" (in directory "\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal"): CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: java.io.IOException: CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(null)
+	at java.lang.ProcessImpl.start(null)
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 13:08:02 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\bsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\bsp.trace.json
+mar 01, 2023 1:08:54 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 44
+mar 01, 2023 1:08:54 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 45
+mar 01, 2023 1:08:55 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 46
+2023.03.01 13:08:55 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.01 13:09:02 ERROR Timeout waiting for 'build/initialize' response
+2023.03.01 13:09:02 WARN  Retrying connection to the build server sbt
+2023.03.01 13:09:02 INFO  Running BSP server [/usr/lib/jvm/java-17-openjdk-amd64/bin/java, -Xms100m, -Xmx100m, -classpath, /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar, -Dsbt.script=/usr/bin/sbt, xsbt.boot.Boot, -bsp]
+2023.03.01 13:09:02 ERROR Running process '/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xms100m -Xmx100m -classpath /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar -Dsbt.script=/usr/bin/sbt xsbt.boot.Boot -bsp' failedjava.io.IOException: Cannot run program "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" (in directory "\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal"): CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: java.io.IOException: CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(null)
+	at java.lang.ProcessImpl.start(null)
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 13:09:02 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\bsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.03.01 13:10:24 ERROR Timeout waiting for 'build/initialize' response
+2023.03.01 13:10:24 WARN  Retrying connection to the build server sbt
+2023.03.01 13:10:24 INFO  Running BSP server [/usr/lib/jvm/java-17-openjdk-amd64/bin/java, -Xms100m, -Xmx100m, -classpath, /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar, -Dsbt.script=/usr/bin/sbt, xsbt.boot.Boot, -bsp]
+2023.03.01 13:10:24 ERROR Running process '/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xms100m -Xmx100m -classpath /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar -Dsbt.script=/usr/bin/sbt xsbt.boot.Boot -bsp' failedjava.io.IOException: Cannot run program "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" (in directory "\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal"): CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: java.io.IOException: CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(null)
+	at java.lang.ProcessImpl.start(null)
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 13:10:24 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\bsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.03.01 13:11:24 ERROR Timeout waiting for 'build/initialize' response
+2023.03.01 13:11:24 WARN  Retrying connection to the build server sbt
+2023.03.01 13:11:24 INFO  Running BSP server [/usr/lib/jvm/java-17-openjdk-amd64/bin/java, -Xms100m, -Xmx100m, -classpath, /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar, -Dsbt.script=/usr/bin/sbt, xsbt.boot.Boot, -bsp]
+2023.03.01 13:11:24 ERROR Running process '/usr/lib/jvm/java-17-openjdk-amd64/bin/java -Xms100m -Xmx100m -classpath /home/LABPK/mbunda/.cache/sbt/boot/sbt-launch/1.7.1/sbt-launch-1.7.1.jar -Dsbt.script=/usr/bin/sbt xsbt.boot.Boot -bsp' failedjava.io.IOException: Cannot run program "/usr/lib/jvm/java-17-openjdk-amd64/bin/java" (in directory "\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal"): CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: java.io.IOException: CreateProcess error=2, Nie mo¿na odnaleŸæ okreœlonego pliku
+	at java.lang.ProcessImpl.create(Native Method)
+	at java.lang.ProcessImpl.<init>(null)
+	at java.lang.ProcessImpl.start(null)
+	at java.lang.ProcessBuilder.start(null)
+	at scala.meta.internal.process.SystemProcess$.run(SystemProcess.scala:45)
+	at scala.meta.internal.bsp.BspServers.newConnection$1(BspServers.scala:71)
+	at scala.meta.internal.bsp.BspServers.$anonfun$newServer$6(BspServers.scala:113)
+	at scala.meta.internal.metals.BuildServerConnection$.setupServer$1(BuildServerConnection.scala:415)
+	at scala.meta.internal.metals.BuildServerConnection$.fromSockets(BuildServerConnection.scala:450)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:465)
+	at scala.meta.internal.metals.BuildServerConnection$$anonfun$fromSockets$8.applyOrElse(BuildServerConnection.scala:462)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:490)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 13:11:24 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\bsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\bsp.trace.json
+2023.03.01 13:12:24 ERROR Timeout waiting for 'build/initialize' response
+2023.03.01 13:12:24 ERROR Failed to connect with build server, no functionality will work.java.util.concurrent.TimeoutException
+	at java.util.concurrent.CompletableFuture.timedGet(null)
+	at java.util.concurrent.CompletableFuture.get(null)
+	at scala.meta.internal.metals.BuildServerConnection$.initialize(BuildServerConnection.scala:520)
+	at scala.meta.internal.metals.BuildServerConnection$.$anonfun$fromSockets$1(BuildServerConnection.scala:431)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 13:12:25 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 01, 2023 1:24:35 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 112
+mar 01, 2023 1:24:40 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 118
+mar 01, 2023 1:24:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 124
+mar 01, 2023 1:24:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 132
+mar 01, 2023 1:24:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 137
+mar 01, 2023 1:24:51 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 144
+2023.03.01 13:25:15 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.01 13:25:21 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.01 13:26:18 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_00.scala
+mar 01, 2023 1:26:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 197
+2023.03.01 13:26:53 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 01, 2023 1:26:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 206
+mar 01, 2023 1:27:31 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 225
+mar 01, 2023 1:27:39 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 236
+mar 01, 2023 1:27:42 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 244
+mar 01, 2023 1:27:54 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 254
+mar 01, 2023 1:27:59 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 264
+mar 01, 2023 1:28:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 268
+mar 01, 2023 1:28:05 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 274
+mar 01, 2023 1:28:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 278
+2023.03.01 13:28:15 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 01, 2023 1:29:00 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 310
+2023.03.01 13:29:01 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 01, 2023 1:30:16 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 343
+mar 01, 2023 1:30:26 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 361
+mar 01, 2023 1:30:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 397
+mar 01, 2023 1:30:43 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 399
+mar 01, 2023 1:30:44 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 403
+mar 01, 2023 1:30:46 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 406
+2023.03.01 13:30:47 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 01, 2023 1:30:49 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 411
+2023.03.01 13:30:53 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 01, 2023 1:30:53 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 423
+mar 01, 2023 1:31:02 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 436
+2023.03.01 13:31:04 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 01, 2023 1:31:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 452
+mar 01, 2023 1:31:17 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 453
+mar 01, 2023 1:31:18 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 454
+mar 01, 2023 1:31:19 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 458
+mar 01, 2023 1:31:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 461
+mar 01, 2023 1:31:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 464
+mar 01, 2023 1:31:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 465
+mar 01, 2023 1:31:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 466
+mar 01, 2023 1:31:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 468
+mar 01, 2023 1:31:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 472
+mar 01, 2023 1:31:21 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 473
+mar 01, 2023 1:31:22 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 476
+mar 01, 2023 1:31:27 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 493
+mar 01, 2023 1:31:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 495
+mar 01, 2023 1:37:20 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 531
+mar 01, 2023 5:24:59 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2023.03.01 19:38:34 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\lsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2023.03.01 19:38:34 INFO  logging to file \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.log
+2023.03.01 19:38:34 INFO  Started: Metals version 0.11.10 in workspace '\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal' for client Visual Studio Code 1.75.1.
+2023.03.01 19:38:34 WARN  Can't instantiate JavaInteractiveSemanticdb (version: JdkVersion(8), jdkHome: C:\Program Files\Java\jre1.8.0_341, javac exists: false)
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/micha/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.10.5/scribe-slf4j_2.13-3.10.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.03.01 19:38:34 WARN  resetting database: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.h2.db
+2023.03.01 19:38:34 ERROR org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database (jdbc:h2:file:\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals;AUTO_SERVER=TRUE) for user 'sa': Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : HYC00
+Error Code : 50100
+Message    : Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:556)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.engine.Database.<init>(Database.java:304)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnectionFromDriver(DriverDataSource.java:258)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnection(DriverDataSource.java:223)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 19:38:34 WARN  resetting database: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.h2.db
+2023.03.01 19:38:34 ERROR unable to setup persistent H2 database with AUTO_SERVER=false, falling back to in-memory database. This means you may be redundantly asked to execute 'Import build', even if it's not needed. Also, code navigation will not work for existing files in the .metals/readonly/ directory. To fix this problem, make sure you only have one running Metals server in the directory '\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal'.org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database (jdbc:h2:file:\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals;AUTO_SERVER=TRUE) for user 'sa': Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : HYC00
+Error Code : 50100
+Message    : Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:98)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:92)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:556)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.engine.Database.<init>(Database.java:304)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnectionFromDriver(DriverDataSource.java:258)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnection(DriverDataSource.java:223)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:98)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:92)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.01 19:38:35 INFO  time: initialize in 0.74s
+2023.03.01 19:38:36 WARN  Build server is not auto-connectable.
+2023.03.01 19:38:36 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.01 19:38:37 INFO  no build target found for \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala. Using presentation compiler with project's scala-library version: 3.2.1
+2023.03.01 19:38:39 INFO  time: code lens generation in 2.73s
+2023.03.01 19:38:39 INFO  time: code lens generation in 3.46s
+2023.03.01 19:38:50 INFO  running 'C:\Program Files\Java\jre1.8.0_341\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\micha\AppData\Local\Temp\metals4447703466969245536\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2023.03.01 19:38:50 ERROR [info] [launcher] getting org.scala-sbt sbt 1.4.6  (this may take some time)...
+2023.03.01 19:38:54 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_00.scala
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/main_2.12/1.4.6/main_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/actions_2.12/1.4.6/actions_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/sbt/1.4.6/sbt-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/logic_2.12/1.4.6/logic_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/io_2.12/1.4.0/io_2.12-1.4.0.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-lang/scala-library/2.12.12/scala-library-2.12.12.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc-lm-integration_2.12/1.4.6/zinc-lm-integration_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/scripted-plugin_2.12/1.4.6/scripted-plugin_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/run_2.12/1.4.6/run_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.3.0/scala-xml_2.12-1.3.0.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/util-logging_2.12/1.4.6/util-logging_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/launcher-interface/1.1.6/launcher-interface-1.1.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/collections_2.12/1.4.6/collections_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/com/github/ben-manes/caffeine/caffeine/2.8.5/caffeine-2.8.5.jar ...
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/main-settings_2.12/1.4.6/main-settings_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/command_2.12/1.4.6/command_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR :: loading settings :: url = jar:file:/C:/Users/micha/AppData/Local/Temp/metals4447703466969245536/sbt-launch.jar!/org/apache/ivy/core/settings/ivysettings.xml
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-lang.modules#scala-xml_2.12;1.3.0!scala-xml_2.12.jar(bundle) (285ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/io/get-coursier/lm-coursier-shaded_2.12/2.0.5/lm-coursier-shaded_2.12-2.0.5.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#launcher-interface;1.1.6!launcher-interface.jar (439ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-api/2.11.2/log4j-api-2.11.2.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#sbt;1.4.6!sbt.jar (535ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-core/2.11.2/log4j-core-2.11.2.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#logic_2.12;1.4.6!logic_2.12.jar (551ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/apache/logging/log4j/log4j-slf4j-impl/2.11.2/log4j-slf4j-impl-2.11.2.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc-lm-integration_2.12;1.4.6!zinc-lm-integration_2.12.jar (557ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/com/swoval/file-tree-views/2.1.6/file-tree-views-2.1.6.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#scripted-plugin_2.12;1.4.6!scripted-plugin_2.12.jar (573ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/librarymanagement-core_2.12/1.4.3/librarymanagement-core_2.12-1.4.3.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#collections_2.12;1.4.6!collections_2.12.jar (642ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/librarymanagement-ivy_2.12/1.4.3/librarymanagement-ivy_2.12-1.4.3.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#run_2.12;1.4.6!run_2.12.jar (658ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.4.4/compiler-interface-1.4.4.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#actions_2.12;1.4.6!actions_2.12.jar (767ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc-compile_2.12/1.4.4/zinc-compile_2.12-1.4.4.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#command_2.12;1.4.6!command_2.12.jar (763ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/util-relation_2.12/1.4.6/util-relation_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#util-logging_2.12;1.4.6!util-logging_2.12.jar (797ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/util-position_2.12/1.4.6/util-position_2.12-1.4.6.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#main-settings_2.12;1.4.6!main-settings_2.12.jar (847ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/com/eed3si9n/sjson-new-scalajson_2.12/0.9.1/sjson-new-scalajson_2.12-0.9.1.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.apache.logging.log4j#log4j-slf4j-impl;2.11.2!log4j-slf4j-impl.jar (336ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-lang/scala-reflect/2.12.12/scala-reflect-2.12.12.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.scala-sbt#io_2.12;1.4.0!io_2.12.jar (898ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/com/eed3si9n/sjson-new-core_2.12/0.9.1/sjson-new-core_2.12-0.9.1.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] com.github.ben-manes.caffeine#caffeine;2.8.5!caffeine.jar (915ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/com/eed3si9n/shaded-jawn-parser_2.12/0.9.1/shaded-jawn-parser_2.12-0.9.1.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] com.swoval#file-tree-views;2.1.6!file-tree-views.jar (408ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/com/eed3si9n/shaded-scalajson_2.12/1.0.0-M4/shaded-scalajson_2.12-1.0.0-M4.jar ...
+2023.03.01 19:39:57 ERROR 	[SUCCESSFUL ] org.apache.logging.log4j#log4j-api;2.11.2!log4j-api.jar (547ms)
+2023.03.01 19:39:57 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/completion_2.12/1.4.6/completion_2.12-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc-compile_2.12;1.4.4!zinc-compile_2.12.jar (234ms)
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#compiler-interface;1.4.4!compiler-interface.jar (343ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/task-system_2.12/1.4.6/task-system_2.12-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/tasks_2.12/1.4.6/tasks_2.12-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#util-position_2.12;1.4.6!util-position_2.12.jar (221ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/testing_2.12/1.4.6/testing_2.12-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#librarymanagement-ivy_2.12;1.4.3!librarymanagement-ivy_2.12.jar (380ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/util-tracking_2.12/1.4.6/util-tracking_2.12-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.eed3si9n#sjson-new-scalajson_2.12;0.9.1!sjson-new-scalajson_2.12.jar (206ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/jline3/jline-terminal/3.16.0-sbt-211a082ed6326908dc84ca017ce4430728f18a8a/jline-terminal-3.16.0-sbt-211a082ed6326908dc84ca017ce4430728f18a8a.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#util-relation_2.12;1.4.6!util-relation_2.12.jar (338ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc-classpath_2.12/1.4.4/zinc-classpath_2.12-1.4.4.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#main_2.12;1.4.6!main_2.12.jar (1114ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc-apiinfo_2.12/1.4.4/zinc-apiinfo_2.12-1.4.4.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#librarymanagement-core_2.12;1.4.3!librarymanagement-core_2.12.jar (549ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc_2.12/1.4.4/zinc_2.12-1.4.4.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.apache.logging.log4j#log4j-core;2.11.2!log4j-core.jar (591ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/util-control_2.12/1.4.6/util-control_2.12-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] io.get-coursier#lm-coursier-shaded_2.12;2.0.5!lm-coursier-shaded_2.12.jar (856ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/jline/jline/2.14.7-sbt-5e51b9d4f9631ebfa29753ce4accc57808e7fd6b/jline-2.14.7-sbt-5e51b9d4f9631ebfa29753ce4accc57808e7fd6b.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.eed3si9n#shaded-jawn-parser_2.12;0.9.1!shaded-jawn-parser_2.12.jar (232ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/jline/jline-reader/3.16.0/jline-reader-3.16.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.eed3si9n#shaded-scalajson_2.12;1.0.0-M4!shaded-scalajson_2.12.jar (203ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/jline/jline-builtins/3.16.0/jline-builtins-3.16.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.eed3si9n#sjson-new-core_2.12;0.9.1!sjson-new-core_2.12.jar (289ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/util-interface/1.4.6/util-interface-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#util-tracking_2.12;1.4.6!util-tracking_2.12.jar (223ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/core-macros_2.12/1.4.6/core-macros_2.12-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#testing_2.12;1.4.6!testing_2.12.jar (227ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/jline/jline-terminal-jna/3.16.0/jline-terminal-jna-3.16.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-lang#scala-library;2.12.12!scala-library.jar (1273ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/jline/jline-terminal-jansi/3.16.0/jline-terminal-jansi-3.16.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt.jline3#jline-terminal;3.16.0-sbt-211a082ed6326908dc84ca017ce4430728f18a8a!jline-terminal.jar (228ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/lmax/disruptor/3.4.2/disruptor-3.4.2.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#tasks_2.12;1.4.6!tasks_2.12.jar (314ms)
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc-classpath_2.12;1.4.4!zinc-classpath_2.12.jar (206ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.12.12/scala-compiler-2.12.12.jar ...
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/jline/jline-terminal/3.16.0/jline-terminal-3.16.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#completion_2.12;1.4.6!completion_2.12.jar (327ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.18/jansi-1.18.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc_2.12;1.4.4!zinc_2.12.jar (203ms)
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#util-control_2.12;1.4.6!util-control_2.12.jar (201ms)
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc-apiinfo_2.12;1.4.4!zinc-apiinfo_2.12.jar (213ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/net/java/dev/jna/jna-platform/5.5.0/jna-platform-5.5.0.jar ...
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/net/java/dev/jna/jna/5.5.0/jna-5.5.0.jar ...
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/jline/jline-style/3.16.0/jline-style-3.16.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#task-system_2.12;1.4.6!task-system_2.12.jar (329ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/util-cache_2.12/1.4.6/util-cache_2.12-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt.jline#jline;2.14.7-sbt-5e51b9d4f9631ebfa29753ce4accc57808e7fd6b!jline.jar (220ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/eed3si9n/sjson-new-murmurhash_2.12/0.9.1/sjson-new-murmurhash_2.12-0.9.1.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.jline#jline-builtins;3.16.0!jline-builtins.jar (209ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/test-agent/1.4.6/test-agent-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-lang#scala-reflect;2.12.12!scala-reflect.jar (510ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.jline#jline-terminal-jna;3.16.0!jline-terminal-jna.jar (230ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/compiler-bridge_2.12/1.4.4/compiler-bridge_2.12-1.4.4.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#util-interface;1.4.6!util-interface.jar (383ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc-classfile_2.12/1.4.4/zinc-classfile_2.12-1.4.4.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.lmax#disruptor;3.4.2!disruptor.jar (292ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/jcraft/jsch/0.1.54/jsch-0.1.54.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#core-macros_2.12;1.4.6!core-macros_2.12.jar (409ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/eed3si9n/gigahorse-okhttp_2.12/0.5.0/gigahorse-okhttp_2.12-0.5.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.jline#jline-terminal;3.16.0!jline-terminal.jar (341ms)
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.jline#jline-style;3.16.0!jline-style.jar (329ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/squareup/okhttp3/okhttp-urlconnection/3.7.0/okhttp-urlconnection-3.7.0.jar ...
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/eed3si9n/gigahorse-core_2.12/0.5.0/gigahorse-core_2.12-0.5.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.fusesource.jansi#jansi;1.18!jansi.jar (356ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/squareup/okhttp3/okhttp/3.14.2/okhttp-3.14.2.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.jline#jline-reader;3.16.0!jline-reader.jar (526ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/typesafe/ssl-config-core_2.12/0.4.0/ssl-config-core_2.12-0.4.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.eed3si9n#sjson-new-murmurhash_2.12;0.9.1!sjson-new-murmurhash_2.12.jar (348ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.2/reactive-streams-1.0.2.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#test-interface;1.0!test-interface.jar (336ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/1.7.26/slf4j-api-1.7.26.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.jline#jline-terminal-jansi;3.16.0!jline-terminal-jansi.jar (518ms)
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#util-cache_2.12;1.4.6!util-cache_2.12.jar (463ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-lang/modules/scala-parser-combinators_2.12/1.1.2/scala-parser-combinators_2.12-1.1.2.jar ...
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/typesafe/config/1.3.3/config-1.3.3.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#test-agent;1.4.6!test-agent.jar (434ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/com/squareup/okio/okio/1.17.2/okio-1.17.2.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#compiler-bridge_2.12;1.4.4!compiler-bridge_2.12.jar (365ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc-core_2.12/1.4.4/zinc-core_2.12-1.4.4.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] net.java.dev.jna#jna;5.5.0!jna.jar (543ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc-persist_2.12/1.4.4/zinc-persist_2.12-1.4.4.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc-classfile_2.12;1.4.4!zinc-classfile_2.12.jar (333ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc-compile-core_2.12/1.4.4/zinc-compile-core_2.12-1.4.4.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.squareup.okhttp3#okhttp-urlconnection;3.7.0!okhttp-urlconnection.jar (277ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/zinc-persist-core-assembly/1.4.4/zinc-persist-core-assembly-1.4.4.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.eed3si9n#gigahorse-core_2.12;0.5.0!gigahorse-core_2.12.jar (282ms)
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.typesafe#ssl-config-core_2.12;0.4.0!ssl-config-core_2.12.jar(bundle) (263ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/sbinary_2.12/0.5.1/sbinary_2.12-0.5.1.jar ...
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/net/openhft/zero-allocation-hashing/0.10.1/zero-allocation-hashing-0.10.1.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.eed3si9n#gigahorse-okhttp_2.12;0.5.0!gigahorse-okhttp_2.12.jar (290ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/protocol_2.12/1.4.6/protocol_2.12-1.4.6.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.reactivestreams#reactive-streams;1.0.2!reactive-streams.jar (249ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/template-resolver/0.1/template-resolver-0.1.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] org.slf4j#slf4j-api;1.7.26!slf4j-api.jar (262ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/ipcsocket/ipcsocket/1.3.0/ipcsocket-1.3.0.jar ...
+2023.03.01 19:39:58 ERROR 	[SUCCESSFUL ] com.jcraft#jsch;0.1.54!jsch.jar (423ms)
+2023.03.01 19:39:58 ERROR downloading https://repo1.maven.org/maven2/org/checkerframework/checker-qual/3.4.1/checker-qual-3.4.1.jar ...
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] com.squareup.okio#okio;1.17.2!okio.jar (214ms)
+2023.03.01 19:39:59 ERROR downloading https://repo1.maven.org/maven2/com/google/errorprone/error_prone_annotations/2.4.0/error_prone_annotations-2.4.0.jar ...
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-lang.modules#scala-parser-combinators_2.12;1.1.2!scala-parser-combinators_2.12.jar(bundle) (245ms)
+2023.03.01 19:39:59 ERROR downloading https://repo1.maven.org/maven2/org/scala-lang/modules/scala-collection-compat_2.12/2.3.2/scala-collection-compat_2.12-2.3.2.jar ...
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] net.java.dev.jna#jna-platform;5.5.0!jna-platform.jar (714ms)
+2023.03.01 19:39:59 ERROR downloading https://repo1.maven.org/maven2/org/scala-sbt/ivy/ivy/2.3.0-sbt-fbc4f586aeeb1591710b14eb4f41b94880dcd745/ivy-2.3.0-sbt-fbc4f586aeeb1591710b14eb4f41b94880dcd745.jar ...
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] com.squareup.okhttp3#okhttp;3.14.2!okhttp.jar (376ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-lang#scala-compiler;2.12.12!scala-compiler.jar (741ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc-core_2.12;1.4.4!zinc-core_2.12.jar (230ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc-persist_2.12;1.4.4!zinc-persist_2.12.jar (215ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] com.typesafe#config;1.3.3!config.jar(bundle) (315ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-sbt#sbinary_2.12;0.5.1!sbinary_2.12.jar (200ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] net.openhft#zero-allocation-hashing;0.10.1!zero-allocation-hashing.jar(bundle) (201ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-sbt#template-resolver;0.1!template-resolver.jar (200ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc-compile-core_2.12;1.4.4!zinc-compile-core_2.12.jar (275ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-sbt.ipcsocket#ipcsocket;1.3.0!ipcsocket.jar (217ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.checkerframework#checker-qual;3.4.1!checker-qual.jar (215ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] com.google.errorprone#error_prone_annotations;2.4.0!error_prone_annotations.jar (195ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-lang.modules#scala-collection-compat_2.12;2.3.2!scala-collection-compat_2.12.jar (196ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-sbt#zinc-persist-core-assembly;1.4.4!zinc-persist-core-assembly.jar (346ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-sbt.ivy#ivy;2.3.0-sbt-fbc4f586aeeb1591710b14eb4f41b94880dcd745!ivy.jar (272ms)
+2023.03.01 19:39:59 ERROR 	[SUCCESSFUL ] org.scala-sbt#protocol_2.12;1.4.6!protocol_2.12.jar (380ms)
+2023.03.01 19:39:59 ERROR :: retrieving :: org.scala-sbt#boot-app
+2023.03.01 19:39:59 ERROR 	confs: [default]
+2023.03.01 19:39:59 ERROR 	84 artifacts copied, 0 already retrieved
+2023.03.01 19:39:59 ERROR [info] [launcher] getting Scala 2.12.12 (for sbt)...
+2023.03.01 19:40:00 ERROR downloading https://repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_2.12/1.0.6/scala-xml_2.12-1.0.6.jar ...
+2023.03.01 19:40:00 ERROR downloading https://repo1.maven.org/maven2/jline/jline/2.14.6/jline-2.14.6.jar ...
+2023.03.01 19:40:00 ERROR downloading https://repo1.maven.org/maven2/org/fusesource/jansi/jansi/1.12/jansi-1.12.jar ...
+2023.03.01 19:40:00 ERROR 	[SUCCESSFUL ] jline#jline;2.14.6!jline.jar (198ms)
+2023.03.01 19:40:00 ERROR 	[SUCCESSFUL ] org.scala-lang.modules#scala-xml_2.12;1.0.6!scala-xml_2.12.jar(bundle) (199ms)
+2023.03.01 19:40:00 ERROR 	[SUCCESSFUL ] org.fusesource.jansi#jansi;1.12!jansi.jar (231ms)
+2023.03.01 19:40:00 ERROR :: retrieving :: org.scala-sbt#boot-scala
+2023.03.01 19:40:00 ERROR 	confs: [default]
+2023.03.01 19:40:00 ERROR 	6 artifacts copied, 0 already retrieved
+2023.03.01 19:40:01 INFO  [info] welcome to sbt 1.4.6 (Oracle Corporation Java 1.8.0_341)
+2023.03.01 19:40:01 INFO  [warn] sbt version mismatch, using: 1.4.6, in build.properties: "1.8.2", use 'reboot' to use the new value.
+2023.03.01 19:40:02 ERROR java.lang.RuntimeException: Invalid build URI (no handler available): file:/wsl.localhost/Ubuntu/home/michael/jp1/bunda-michal/
+2023.03.01 19:40:02 ERROR 	at scala.sys.package$.error(package.scala:30)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.Load$.$anonfun$builtinLoader$1(Load.scala:483)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.BuildLoader.$anonfun$apply$3(BuildLoader.scala:244)
+2023.03.01 19:40:02 ERROR 	at scala.Option.getOrElse(Option.scala:189)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.BuildLoader.apply(BuildLoader.scala:244)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.Load$.loadURI$1(Load.scala:548)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.Load$.loadAll(Load.scala:564)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.Load$.loadURI(Load.scala:494)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.Load$.load(Load.scala:473)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.Load$.$anonfun$apply$1(Load.scala:242)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.Load$.timed(Load.scala:1382)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.Load$.apply(Load.scala:242)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.Load$.defaultLoad(Load.scala:55)
+2023.03.01 19:40:02 ERROR 	at sbt.BuiltinCommands$.liftedTree1$1(Main.scala:932)
+2023.03.01 19:40:02 ERROR 	at sbt.BuiltinCommands$.doLoadProject(Main.scala:932)
+2023.03.01 19:40:02 ERROR 	at sbt.BuiltinCommands$.$anonfun$loadProjectImpl$2(Main.scala:885)
+2023.03.01 19:40:02 ERROR 	at sbt.Command$.$anonfun$applyEffect$4(Command.scala:150)
+2023.03.01 19:40:02 ERROR 	at sbt.Command$.$anonfun$applyEffect$2(Command.scala:145)
+2023.03.01 19:40:02 ERROR 	at sbt.Command$.process(Command.scala:189)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.$anonfun$processCommand$5(MainLoop.scala:242)
+2023.03.01 19:40:02 ERROR 	at scala.Option.getOrElse(Option.scala:189)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.process$1(MainLoop.scala:242)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.processCommand(MainLoop.scala:268)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.$anonfun$next$5(MainLoop.scala:162)
+2023.03.01 19:40:02 ERROR 	at sbt.State$StateOpsImpl$.runCmd$1(State.scala:289)
+2023.03.01 19:40:02 ERROR 	at sbt.State$StateOpsImpl$.process$extension(State.scala:325)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.$anonfun$next$4(MainLoop.scala:162)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.next(MainLoop.scala:162)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.run(MainLoop.scala:143)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.$anonfun$runWithNewLog$1(MainLoop.scala:118)
+2023.03.01 19:40:02 ERROR 	at sbt.io.Using.apply(Using.scala:27)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.runWithNewLog(MainLoop.scala:111)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.runAndClearLast(MainLoop.scala:65)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.runLoggedLoop(MainLoop.scala:50)
+2023.03.01 19:40:02 ERROR 	at sbt.MainLoop$.runLogged(MainLoop.scala:41)
+2023.03.01 19:40:02 ERROR 	at sbt.StandardMain$.runManaged(Main.scala:191)
+2023.03.01 19:40:02 ERROR 	at sbt.xMain$.$anonfun$run$8(Main.scala:102)
+2023.03.01 19:40:02 ERROR 	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+2023.03.01 19:40:02 ERROR 	at scala.Console$.withIn(Console.scala:230)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.util.Terminal$.withIn(Terminal.scala:557)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.util.Terminal$.$anonfun$withStreams$1(Terminal.scala:347)
+2023.03.01 19:40:02 ERROR 	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+2023.03.01 19:40:02 ERROR 	at scala.Console$.withOut(Console.scala:167)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.util.Terminal$.$anonfun$withOut$2(Terminal.scala:547)
+2023.03.01 19:40:02 ERROR 	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+2023.03.01 19:40:02 ERROR 	at scala.Console$.withErr(Console.scala:196)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.util.Terminal$.withOut(Terminal.scala:547)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.util.Terminal$.withStreams(Terminal.scala:347)
+2023.03.01 19:40:02 ERROR 	at sbt.xMain$.run(Main.scala:86)
+2023.03.01 19:40:02 ERROR 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2023.03.01 19:40:02 ERROR 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+2023.03.01 19:40:02 ERROR 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+2023.03.01 19:40:02 ERROR 	at java.lang.reflect.Method.invoke(Unknown Source)
+2023.03.01 19:40:02 ERROR 	at sbt.internal.XMainConfiguration.run(XMainConfiguration.scala:83)
+2023.03.01 19:40:02 ERROR 	at sbt.xMain.run(Main.scala:46)
+2023.03.01 19:40:02 ERROR 	at xsbt.boot.Launch$$anonfun$run$1.apply(Launch.scala:111)
+2023.03.01 19:40:02 ERROR 	at xsbt.boot.Launch$.withContextLoader(Launch.scala:131)
+2023.03.01 19:40:02 ERROR 	at xsbt.boot.Launch$.run(Launch.scala:111)
+2023.03.01 19:40:02 ERROR 	at xsbt.boot.Launch$$anonfun$apply$1.apply(Launch.scala:37)
+2023.03.01 19:40:02 ERROR 	at xsbt.boot.Launch$.launch(Launch.scala:120)
+2023.03.01 19:40:02 ERROR 	at xsbt.boot.Launch$.apply(Launch.scala:20)
+2023.03.01 19:40:02 ERROR 	at xsbt.boot.Boot$.runImpl(Boot.scala:56)
+2023.03.01 19:40:02 ERROR 	at xsbt.boot.Boot$.main(Boot.scala:18)
+2023.03.01 19:40:02 ERROR 	at xsbt.boot.Boot.main(Boot.scala)
+2023.03.01 19:40:01 INFO  [error] Invalid build URI (no handler available): file:/wsl.localhost/Ubuntu/home/michael/jp1/bunda-michal/
+2023.03.01 19:40:01 INFO  [error] Use 'last' for the full log.
+2023.03.01 19:40:01 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2023.03.01 19:40:02 INFO  time: ran 'sbt bloopInstall' in 1m12s
+2023.03.01 19:40:02 ERROR sbt command failed: C:\Program Files\Java\jre1.8.0_341\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\micha\AppData\Local\Temp\metals4447703466969245536\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall
+2023.03.01 23:38:37 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.02 20:34:06 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\lsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2023.03.02 20:34:07 INFO  logging to file \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.log
+2023.03.02 20:34:07 INFO  Started: Metals version 0.11.10 in workspace '\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal' for client Visual Studio Code 1.75.1.
+2023.03.02 20:34:07 WARN  Can't instantiate JavaInteractiveSemanticdb (version: JdkVersion(8), jdkHome: C:\Program Files\Java\jre1.8.0_341, javac exists: false)
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/micha/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.10.5/scribe-slf4j_2.13-3.10.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.03.02 20:34:07 WARN  resetting database: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.h2.db
+2023.03.02 20:34:07 ERROR org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database (jdbc:h2:file:\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals;AUTO_SERVER=TRUE) for user 'sa': Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : HYC00
+Error Code : 50100
+Message    : Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:556)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.engine.Database.<init>(Database.java:304)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnectionFromDriver(DriverDataSource.java:258)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnection(DriverDataSource.java:223)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.02 20:34:07 WARN  resetting database: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.h2.db
+2023.03.02 20:34:07 ERROR unable to setup persistent H2 database with AUTO_SERVER=false, falling back to in-memory database. This means you may be redundantly asked to execute 'Import build', even if it's not needed. Also, code navigation will not work for existing files in the .metals/readonly/ directory. To fix this problem, make sure you only have one running Metals server in the directory '\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal'.org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database (jdbc:h2:file:\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals;AUTO_SERVER=TRUE) for user 'sa': Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : HYC00
+Error Code : 50100
+Message    : Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:98)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:92)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:556)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.engine.Database.<init>(Database.java:304)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnectionFromDriver(DriverDataSource.java:258)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnection(DriverDataSource.java:223)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:98)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:92)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.02 20:34:08 INFO  time: initialize in 0.91s
+2023.03.02 20:34:09 WARN  Build server is not auto-connectable.
+2023.03.02 20:34:09 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.02 20:34:12 INFO  no build target found for \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala. Using presentation compiler with project's scala-library version: 3.2.1
+2023.03.02 20:34:14 INFO  time: code lens generation in 4.12s
+2023.03.02 20:34:14 INFO  time: code lens generation in 4.99s
+2023.03.02 21:01:11 INFO  shutting down Metals
+2023.03.06 15:53:15 INFO  tracing is disabled for protocol LSP, to enable tracing of incoming and outgoing JSON messages create an empty file at \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\lsp.trace.json or C:\Users\micha\AppData\Local\scalameta\metals\cache\lsp.trace.json
+2023.03.06 15:53:16 INFO  logging to file \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.log
+2023.03.06 15:53:16 INFO  Started: Metals version 0.11.10 in workspace '\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal' for client Visual Studio Code 1.76.0.
+2023.03.06 15:53:16 WARN  Can't instantiate JavaInteractiveSemanticdb (version: JdkVersion(8), jdkHome: C:\Program Files\Java\jre1.8.0_341, javac exists: false)
+SLF4J: No SLF4J providers were found.
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
+SLF4J: Class path contains SLF4J bindings targeting slf4j-api versions 1.7.x or earlier.
+SLF4J: Ignoring binding found at [jar:file:/C:/Users/micha/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/com/outr/scribe-slf4j_2.13/3.10.5/scribe-slf4j_2.13-3.10.5.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See https://www.slf4j.org/codes.html#ignoredBindings for an explanation.
+2023.03.06 15:53:16 WARN  resetting database: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.h2.db
+2023.03.06 15:53:16 ERROR org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database (jdbc:h2:file:\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals;AUTO_SERVER=TRUE) for user 'sa': Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : HYC00
+Error Code : 50100
+Message    : Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:556)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.engine.Database.<init>(Database.java:304)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnectionFromDriver(DriverDataSource.java:258)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnection(DriverDataSource.java:223)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:81)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.06 15:53:16 WARN  resetting database: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals.h2.db
+2023.03.06 15:53:16 ERROR unable to setup persistent H2 database with AUTO_SERVER=false, falling back to in-memory database. This means you may be redundantly asked to execute 'Import build', even if it's not needed. Also, code navigation will not work for existing files in the .metals/readonly/ directory. To fix this problem, make sure you only have one running Metals server in the directory '\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal'.org.flywaydb.core.internal.exception.FlywaySqlException: Unable to obtain connection from database (jdbc:h2:file:\\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\.metals\metals;AUTO_SERVER=TRUE) for user 'sa': Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL State  : HYC00
+Error Code : 50100
+Message    : Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:60)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:98)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:92)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+Caused by: org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Cecha nie jest wspierana: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)"
+Feature not supported: "AUTO_SERVER=TRUE && (readOnly || inMemory || FILE_LOCK=NO || FILE_LOCK=FS)" [50100-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:556)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.message.DbException.getUnsupportedException(DbException.java:287)
+	at org.h2.engine.Database.<init>(Database.java:304)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnectionFromDriver(DriverDataSource.java:258)
+	at org.flywaydb.core.internal.jdbc.DriverDataSource.getConnection(DriverDataSource.java:223)
+	at org.flywaydb.core.internal.jdbc.JdbcUtils.openConnection(JdbcUtils.java:48)
+	at org.flywaydb.core.internal.jdbc.JdbcConnectionFactory.<init>(JdbcConnectionFactory.java:75)
+	at org.flywaydb.core.FlywayExecutor.execute(FlywayExecutor.java:146)
+	at org.flywaydb.core.Flyway.clean(Flyway.java:213)
+	at scala.meta.internal.metals.Tables.migrateOrRestart(Tables.scala:156)
+	at scala.meta.internal.metals.Tables.tryUrl(Tables.scala:144)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:138)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:98)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:92)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:48)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:74)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:39)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLanguageServer.$anonfun$initialize$2(MetalsLanguageServer.scala:882)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:678)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(null)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(null)
+	at java.lang.Thread.run(null)
+
+2023.03.06 15:53:17 INFO  time: initialize in 1.14s
+2023.03.06 15:53:19 WARN  Build server is not auto-connectable.
+2023.03.06 15:53:19 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 15:53:19 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.06 15:53:23 INFO  no build target found for \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala. Using presentation compiler with project's scala-library version: 3.2.1
+2023.03.06 15:53:26 INFO  time: code lens generation in 7.49s
+2023.03.06 15:53:27 INFO  running 'C:\Program Files\Java\jre1.8.0_341\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\micha\AppData\Local\Temp\metals6877568529039864457\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2023.03.06 15:53:30 INFO  [info] welcome to sbt 1.4.6 (Oracle Corporation Java 1.8.0_341)
+2023.03.06 15:53:30 INFO  [warn] sbt version mismatch, using: 1.4.6, in build.properties: "1.8.2", use 'reboot' to use the new value.
+2023.03.06 15:53:31 ERROR java.lang.RuntimeException: Invalid build URI (no handler available): file:/wsl.localhost/Ubuntu/home/michael/jp1/bunda-michal/
+2023.03.06 15:53:31 ERROR 	at scala.sys.package$.error(package.scala:30)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.Load$.$anonfun$builtinLoader$1(Load.scala:483)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.BuildLoader.$anonfun$apply$3(BuildLoader.scala:244)
+2023.03.06 15:53:31 ERROR 	at scala.Option.getOrElse(Option.scala:189)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.BuildLoader.apply(BuildLoader.scala:244)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.Load$.loadURI$1(Load.scala:548)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.Load$.loadAll(Load.scala:564)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.Load$.loadURI(Load.scala:494)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.Load$.load(Load.scala:473)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.Load$.$anonfun$apply$1(Load.scala:242)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.Load$.timed(Load.scala:1382)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.Load$.apply(Load.scala:242)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.Load$.defaultLoad(Load.scala:55)
+2023.03.06 15:53:31 ERROR 	at sbt.BuiltinCommands$.liftedTree1$1(Main.scala:932)
+2023.03.06 15:53:31 ERROR 	at sbt.BuiltinCommands$.doLoadProject(Main.scala:932)
+2023.03.06 15:53:31 ERROR 	at sbt.BuiltinCommands$.$anonfun$loadProjectImpl$2(Main.scala:885)
+2023.03.06 15:53:31 ERROR 	at sbt.Command$.$anonfun$applyEffect$4(Command.scala:150)
+2023.03.06 15:53:31 ERROR 	at sbt.Command$.$anonfun$applyEffect$2(Command.scala:145)
+2023.03.06 15:53:31 ERROR 	at sbt.Command$.process(Command.scala:189)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.$anonfun$processCommand$5(MainLoop.scala:242)
+2023.03.06 15:53:31 ERROR 	at scala.Option.getOrElse(Option.scala:189)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.process$1(MainLoop.scala:242)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.processCommand(MainLoop.scala:268)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.$anonfun$next$5(MainLoop.scala:162)
+2023.03.06 15:53:31 ERROR 	at sbt.State$StateOpsImpl$.runCmd$1(State.scala:289)
+2023.03.06 15:53:31 ERROR 	at sbt.State$StateOpsImpl$.process$extension(State.scala:325)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.$anonfun$next$4(MainLoop.scala:162)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:23)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.next(MainLoop.scala:162)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.run(MainLoop.scala:143)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.$anonfun$runWithNewLog$1(MainLoop.scala:118)
+2023.03.06 15:53:31 ERROR 	at sbt.io.Using.apply(Using.scala:27)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.runWithNewLog(MainLoop.scala:111)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.runAndClearLast(MainLoop.scala:65)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.runLoggedLoop(MainLoop.scala:50)
+2023.03.06 15:53:31 ERROR 	at sbt.MainLoop$.runLogged(MainLoop.scala:41)
+2023.03.06 15:53:31 ERROR 	at sbt.StandardMain$.runManaged(Main.scala:191)
+2023.03.06 15:53:31 ERROR 	at sbt.xMain$.$anonfun$run$8(Main.scala:102)
+2023.03.06 15:53:31 ERROR 	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+2023.03.06 15:53:31 ERROR 	at scala.Console$.withIn(Console.scala:230)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.util.Terminal$.withIn(Terminal.scala:557)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.util.Terminal$.$anonfun$withStreams$1(Terminal.scala:347)
+2023.03.06 15:53:31 ERROR 	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+2023.03.06 15:53:31 ERROR 	at scala.Console$.withOut(Console.scala:167)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.util.Terminal$.$anonfun$withOut$2(Terminal.scala:547)
+2023.03.06 15:53:31 ERROR 	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+2023.03.06 15:53:31 ERROR 	at scala.Console$.withErr(Console.scala:196)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.util.Terminal$.withOut(Terminal.scala:547)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.util.Terminal$.withStreams(Terminal.scala:347)
+2023.03.06 15:53:31 ERROR 	at sbt.xMain$.run(Main.scala:86)
+2023.03.06 15:53:31 ERROR 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+2023.03.06 15:53:31 ERROR 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+2023.03.06 15:53:31 ERROR 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+2023.03.06 15:53:31 ERROR 	at java.lang.reflect.Method.invoke(Unknown Source)
+2023.03.06 15:53:31 ERROR 	at sbt.internal.XMainConfiguration.run(XMainConfiguration.scala:83)
+2023.03.06 15:53:31 ERROR 	at sbt.xMain.run(Main.scala:46)
+2023.03.06 15:53:31 ERROR 	at xsbt.boot.Launch$$anonfun$run$1.apply(Launch.scala:111)
+2023.03.06 15:53:31 ERROR 	at xsbt.boot.Launch$.withContextLoader(Launch.scala:131)
+2023.03.06 15:53:31 ERROR 	at xsbt.boot.Launch$.run(Launch.scala:111)
+2023.03.06 15:53:31 ERROR 	at xsbt.boot.Launch$$anonfun$apply$1.apply(Launch.scala:37)
+2023.03.06 15:53:31 ERROR 	at xsbt.boot.Launch$.launch(Launch.scala:120)
+2023.03.06 15:53:31 ERROR 	at xsbt.boot.Launch$.apply(Launch.scala:20)
+2023.03.06 15:53:31 ERROR 	at xsbt.boot.Boot$.runImpl(Boot.scala:56)
+2023.03.06 15:53:31 ERROR 	at xsbt.boot.Boot$.main(Boot.scala:18)
+2023.03.06 15:53:31 ERROR 	at xsbt.boot.Boot.main(Boot.scala)
+2023.03.06 15:53:31 INFO  [error] Invalid build URI (no handler available): file:/wsl.localhost/Ubuntu/home/michael/jp1/bunda-michal/
+2023.03.06 15:53:31 INFO  [error] Use 'last' for the full log.
+2023.03.06 15:53:31 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2023.03.06 15:53:31 INFO  time: ran 'sbt bloopInstall' in 3.48s
+2023.03.06 15:53:31 ERROR sbt command failed: C:\Program Files\Java\jre1.8.0_341\bin\java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar C:\Users\micha\AppData\Local\Temp\metals6877568529039864457\sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall
+mar 06, 2023 3:54:10 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 7
+mar 06, 2023 3:55:45 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 49
+Exception in thread "pool-3-thread-1" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:195)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+Exception in thread "pool-3-thread-2" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:195)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+2023.03.06 15:55:47 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.06 15:56:18 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+mar 06, 2023 3:57:07 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 87
+2023.03.06 15:57:10 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:07:12 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+mar 06, 2023 4:08:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 141
+mar 06, 2023 4:08:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 144
+mar 06, 2023 4:08:23 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 145
+mar 06, 2023 4:08:24 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 147
+Exception in thread "pool-3-thread-3" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:195)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+Exception in thread "pool-3-thread-4" java.lang.Error: java.lang.InterruptedException
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.InterruptedException
+	at scala.meta.internal.metals.FutureCancelToken.checkCanceled(FutureCancelToken.scala:29)
+	at scala.meta.internal.pc.CompilerAccess.onCompilerJobQueue$$anonfun$1(CompilerAccess.scala:195)
+	at scala.meta.internal.pc.CompilerJobQueue$Job.run(CompilerJobQueue.scala:152)
+	... 3 more
+2023.03.06 16:08:26 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+mar 06, 2023 4:08:28 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 175
+2023.03.06 16:08:29 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:08:33 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:08:57 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:18:11 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:18:17 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:18:38 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:18:49 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_00.scala
+mar 06, 2023 4:18:50 PM org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 278
+2023.03.06 16:19:41 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:19:54 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:20:31 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:20:42 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_02.scala
+2023.03.06 16:24:07 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+2023.03.06 16:24:49 WARN  no build target for: \\wsl.localhost\Ubuntu\home\michael\jp1\bunda-michal\lab02\src\main\scala\Zad_01.scala
+mar 06, 2023 4:26:54 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace

@@ -15,9 +15,9 @@ def obramuj(napis: String, znak: Char): String = {
   }
   val arrOfStringsMultiline = for {
     word <- splitString
-  } yield s"# ${word}${" " * (maxWordLength - word.length)} #\n"
+  } yield s"${znak} ${word}${" " * (maxWordLength - word.length)} ${znak}\n"
   
-  s"${"#" * (maxWordLength + 4)}\n${arrOfStringsMultiline.mkString("")}${"#" * (maxWordLength+4)}"
+  s"${znak.toString * (maxWordLength + 4)}\n${arrOfStringsMultiline.mkString("")}${znak.toString * (maxWordLength+4)}"
   
 }
 

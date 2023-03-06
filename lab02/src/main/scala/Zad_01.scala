@@ -13,6 +13,7 @@ def jestPierwsza(n: Int): Boolean = {
   val range = 2 until n/2
   for { i <- range } if (pomocnicza(n, i)) { return false }
 
+
   def pomocnicza(a: Int, b: Int): Boolean = a%b == 0
 
   // „ostatnie napotkane” wyrażenie zwracane jest jako wynik
