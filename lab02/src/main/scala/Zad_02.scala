@@ -9,10 +9,11 @@ def obramuj(napis: String, znak: Char): String = {
   // definiujemy funkcję obramowującą
   val splitString = napis.split("\n")
   // val range = 0 until .length
-  var maxWordLength = 0
-  for { el <- splitString } {
-    if (el.length > maxWordLength) maxWordLength = el.length
-  }
+  val maxWordLength = splitString.maxBy(_.length).length
+  
+    // for { el <- splitString } {
+    //   if (el.length > maxWordLength) maxWordLength = el.length
+    // }
   val arrOfStringsMultiline = for {
     word <- splitString
   } yield s"${znak} ${word}${" " * (maxWordLength - word.length)} ${znak}\n"
