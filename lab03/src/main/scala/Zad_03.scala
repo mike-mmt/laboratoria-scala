@@ -1,11 +1,12 @@
 package lab03
 
 def reverse(napis: String): String = {
-  // @annotation.tailrec
-  def pomocnicza( /*argumenty*/ ): String = {
-    ???
+  @annotation.tailrec
+  def pomocnicza(napis: String, odwróconyNapis: String = ""): String = {
+    if (napis.isEmpty()) odwróconyNapis
+    else pomocnicza(napis.tail, napis.head.toString + odwróconyNapis)
   }
-  "*"
+  pomocnicza(napis)
 }
 
 @main def zad_03(napis: String): Unit = {

@@ -1,11 +1,12 @@
 package lab03
 
 def IntToBin(liczba: Int): Int = {
-  // @annotation.tailrec
-  def pomocnicza( /*argumenty*/ ): Int = {
-    ???
+  @annotation.tailrec
+  def pomocnicza(liczba: Int, wynik: String = ""): String = {
+    if (liczba == 1) "1" + wynik
+    else pomocnicza(liczba/2, (liczba%2).toString() + wynik)
   }
-  0
+  pomocnicza(liczba).toInt
 }
 
 @main def zad_04(liczba: Int): Unit = {
