@@ -50,3 +50,5 @@ bin/
 
 #general
 *.class
+.metals/metals.log
+.metals/metals.mv.db
