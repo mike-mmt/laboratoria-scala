@@ -1,4 +1,4 @@
-name := "lab07"
+name := "wyk_07"
 version := "0.0.1"
 
 scalaVersion := "3.2.2"
@@ -10,7 +10,7 @@ scalacOptions ++= Seq(
    "-print-lines",         // Show source code line numbers.
    "-unchecked",           // Enable additional warnings where generated code depends on assumptions
    "-Xfatal-warnings",     // Fail the compilation if there are any warnings.
-  //  "-Xmigration",          // Warn about constructs whose behavior may have changed since version.
+   "-Xmigration",          // Warn about constructs whose behavior may have changed since version.
    "-source:3.0",
    "-encoding", "utf8",
 )
