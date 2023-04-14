@@ -28,7 +28,6 @@ def wynik: List[(String,  List[Int])] = {
     )
   ).map(listaSłów => listaSłów.distinct).zipWithIndex.map( (linia, indeks) => (linia, indeks + 1))
 
-  // val listaWszystkichSłów = listySłów.flatMap((x,_) => x).distinct
 
   val listaParSłów = listySłów.map( (lista, indeks) => (lista.map(słowo => (słowo, indeks)), indeks)) // List(List((slowo,1),(slowo,1)...),1)  
 
@@ -37,7 +36,7 @@ def wynik: List[(String,  List[Int])] = {
   listaWszystkichParSłów
     .groupBy((słowo, indeks) => słowo)
     .map( (key, value) => (key, value.map((słowo, indeks) => indeks)))
-    .toList.sortWith((a,b) => ltePL(a._1,b._1))
+    .toList.sortWith((a,b) => ltePL(a._1,b._1)).tail
     
 }
 
