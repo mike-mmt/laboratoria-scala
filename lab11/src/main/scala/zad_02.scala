@@ -13,7 +13,7 @@ class Gracz01 extends Actor with ActorLogging {
       przeciwnik ! Piłeczka
       context.become(gramyLicznik(maks - 1))
     case Piłeczka =>
-      log.info(s"odbijam do ${sender()}") 
+      log.info(s"odbijam do ${sender().path}") 
       sender() ! Piłeczka
       context.become(gramy)
     case msg => log.info(s"Odebrałem wiadomość: ${msg}")
@@ -29,7 +29,7 @@ class Gracz01 extends Actor with ActorLogging {
     case Piłeczka =>
       if (pozostałoOdbić > 0)
         val przeciwnik = sender()
-        log.info(s"odbijam do ${przeciwnik.path}")
+        log.info(s"odbijam do ${przeciwnik.path}, pozostało ${pozostałoOdbić - 1} odbić")
         sender() ! Piłeczka
         context.become(gramyLicznik(pozostałoOdbić - 1))
       else
