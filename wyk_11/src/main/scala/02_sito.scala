@@ -21,6 +21,11 @@ class Boss extends Actor with ActorLogging {
     }
 }
 
+object Boss {
+    // miejsce na komunikaty specyficzne dla Bossa
+    case object Komunikat
+}
+
 class Worker extends Actor with ActorLogging {
     def receive: Receive = {
         case Kandydat(skarb) =>
@@ -50,4 +55,5 @@ class Worker extends Actor with ActorLogging {
     val boss = system.actorOf(Props[Boss](), "boss")
 
     boss ! Primes(50)
+    boss ! Boss.Komunikat
 }

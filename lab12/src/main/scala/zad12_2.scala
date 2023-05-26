@@ -1,4 +1,4 @@
-
+package zad12_2
 import akka.actor.{ActorSystem, Actor, ActorLogging, ActorRef, Props}
 
 case class Oblicz(liczba: Int)
@@ -7,17 +7,24 @@ case class Wynik(n: Int, fin_n: BigInt)
 class Boss extends Actor with ActorLogging {
     def receive: Receive = {
       case Oblicz(indeks) =>
-        context.actorOf(Props[Nadzorca]()) ! Oblicz(indeks)
-      case Wynik(liczba) =>
+        val nadzorca = context.actorOf(Props[Nadzorca]())
+        nadzorca ! Oblicz(indeks)
+        context.become(receive2(nadzorca))
+    }
+
+    def receive2(nadzorca: ActorRef): Receive = {
+      case Wynik(n, liczba) =>
         log.info(s"Wynik: $liczba")
+      case Oblicz(indeks) =>
+        nadzorca ! Oblicz(indeks)
     }
 }
 
 class Nadzorca(cache: Map[Int, BigInt] = Map(1 -> 1, 2 -> 1)) extends Actor with ActorLogging {
     def receive: Receive = {
       case Oblicz(key) =>
-        if cache.isDefined(key) then
-          sender() ! Wynik(key, cache.get(key))
+        if cache.isDefinedAt(key) then
+          sender() ! Wynik(key, cache.get(key).get)
         else
           context.actorOf(Props[Pracownik](key)) ! Oblicz(key)
           context.become(czekamNaWynik(sender()))
@@ -35,18 +42,18 @@ class Pracownik(k: Int) extends Actor with ActorLogging {
     def receive: Receive = {
       case Oblicz(key) =>
         val przelozony = sender()
-        context.actorOf(Props[Pracownik]()) ! Oblicz(liczba - 1)
-        context.actorOf(Props[Pracownik]()) ! Oblicz(liczba - 2)
+        context.actorOf(Props[Pracownik]()) ! Oblicz(k - 1)
+        context.actorOf(Props[Pracownik]()) ! Oblicz(k - 2)
         context.become(czekamNaWynik(przelozony))
     }
 
     def czekamNaWynik(przelozony: ActorRef): Receive = {
-       case Wynik(liczba) =>
+       case Wynik(n, liczba) =>
         context.become(półWyniku(przelozony, liczba))
     }
 
     def półWyniku(przelozony: ActorRef, półWyniku: Int): Receive = {
-      case Wynik(liczba) =>
+      case Wynik(n, liczba) =>
         val wynik = półWyniku + liczba
         przelozony ! Wynik(wynik)
     }
