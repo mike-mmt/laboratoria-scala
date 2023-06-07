@@ -27,14 +27,21 @@ class Nadzorca(cache: Map[Int, BigInt] = Map(1 -> 1, 2 -> 1)) extends Actor with
           sender() ! Wynik(key, cache.get(key).get)
         else
           context.actorOf(Props[Pracownik](key)) ! Oblicz(key)
-          context.become(czekamNaWynik(sender()))
+          context.become(czekamNaWynik(sender(), cache))
     }
 
-    def czekamNaWynik(przelozony): Receive = {
+    def czekamNaWynik(przelozony: ActorRef, cache: Map[Int, BigInt]): Receive = {
         case Wynik(n, fib_n) =>
-          cache = cache + (n, fib_n)
+          val newCache = cache + (n -> fib_n)
           przelozony ! Wynik(n, fib_n)
           context.become(receive)
+        case Oblicz(key) =>
+        if cache.isDefinedAt(key) then
+          sender() ! Wynik(key, cache.get(key).get)
+        else
+          context.actorOf(Props[Pracownik](key)) ! Oblicz(key)
+          context.become(czekamNaWynik(sender(), cache))
+    }
     }
 }
 
